@@ -1,0 +1,19 @@
+excluded:
+  - Pods
+disabled_rules:
+  - todo
+  - identifier_name
+  - trailing_whitespace
+line_length: 130
+nesting:
+  type_level:
+    warning: 4
+  statement_level:
+    warning: 6
+type_name:
+  excluded:
+    - ID
+identifier_name:
+  excluded:
+    - id
+    - no

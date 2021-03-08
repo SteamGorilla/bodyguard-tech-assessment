@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32854D4852B9BBCDB4A9A24E /* Pods_bodyguard_tech_assessment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B9CC80A26FC1693D1E4A3F /* Pods_bodyguard_tech_assessment.framework */; };
 		3F40180E25F6AB5F003C0FC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F40180D25F6AB5F003C0FC8 /* AppDelegate.swift */; };
 		3F40181025F6AB5F003C0FC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F40180F25F6AB5F003C0FC8 /* SceneDelegate.swift */; };
 		3F40181225F6AB5F003C0FC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F40181125F6AB5F003C0FC8 /* ViewController.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		31B9CC80A26FC1693D1E4A3F /* Pods_bodyguard_tech_assessment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bodyguard_tech_assessment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F40180A25F6AB5F003C0FC8 /* bodyguard-tech-assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bodyguard-tech-assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F40180D25F6AB5F003C0FC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F40180F25F6AB5F003C0FC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		3F40181625F6AB62003C0FC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F40181925F6AB62003C0FC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F40181B25F6AB62003C0FC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C11D1347D17680282C5C3BC /* Pods-bodyguard-tech-assessment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bodyguard-tech-assessment.release.xcconfig"; path = "Target Support Files/Pods-bodyguard-tech-assessment/Pods-bodyguard-tech-assessment.release.xcconfig"; sourceTree = "<group>"; };
+		C94A213AE319F2EA7698F1F3 /* Pods-bodyguard-tech-assessment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bodyguard-tech-assessment.debug.xcconfig"; path = "Target Support Files/Pods-bodyguard-tech-assessment/Pods-bodyguard-tech-assessment.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32854D4852B9BBCDB4A9A24E /* Pods_bodyguard_tech_assessment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10CFB55A6C3D14C1D7474C86 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				31B9CC80A26FC1693D1E4A3F /* Pods_bodyguard_tech_assessment.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3F40180125F6AB5F003C0FC8 = {
 			isa = PBXGroup;
 			children = (
 				3F40180C25F6AB5F003C0FC8 /* bodyguard-tech-assessment */,
 				3F40180B25F6AB5F003C0FC8 /* Products */,
+				F8D873EDE2BA6BF0C7A30B1D /* Pods */,
+				10CFB55A6C3D14C1D7474C86 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = "bodyguard-tech-assessment";
 			sourceTree = "<group>";
 		};
+		F8D873EDE2BA6BF0C7A30B1D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C94A213AE319F2EA7698F1F3 /* Pods-bodyguard-tech-assessment.debug.xcconfig */,
+				8C11D1347D17680282C5C3BC /* Pods-bodyguard-tech-assessment.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F40181E25F6AB62003C0FC8 /* Build configuration list for PBXNativeTarget "bodyguard-tech-assessment" */;
 			buildPhases = (
+				34BEB6E80D77725AE090BB46 /* [CP] Check Pods Manifest.lock */,
 				3F40180625F6AB5F003C0FC8 /* Sources */,
 				3F40180725F6AB5F003C0FC8 /* Frameworks */,
 				3F40180825F6AB5F003C0FC8 /* Resources */,
+				C2169D4CB6D75205865BA6D9 /* [CP] Embed Pods Frameworks */,
+				3F9DC77625F6D0AC00BCF4B3 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -127,6 +154,66 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		34BEB6E80D77725AE090BB46 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bodyguard-tech-assessment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F9DC77625F6D0AC00BCF4B3 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		C2169D4CB6D75205865BA6D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bodyguard-tech-assessment/Pods-bodyguard-tech-assessment-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bodyguard-tech-assessment/Pods-bodyguard-tech-assessment-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bodyguard-tech-assessment/Pods-bodyguard-tech-assessment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3F40180625F6AB5F003C0FC8 /* Sources */ = {
@@ -271,6 +358,7 @@
 		};
 		3F40181F25F6AB62003C0FC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C94A213AE319F2EA7698F1F3 /* Pods-bodyguard-tech-assessment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -290,6 +378,7 @@
 		};
 		3F40182025F6AB62003C0FC8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C11D1347D17680282C5C3BC /* Pods-bodyguard-tech-assessment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
