@@ -10,9 +10,15 @@
 		32854D4852B9BBCDB4A9A24E /* Pods_bodyguard_tech_assessment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B9CC80A26FC1693D1E4A3F /* Pods_bodyguard_tech_assessment.framework */; };
 		3F40180E25F6AB5F003C0FC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F40180D25F6AB5F003C0FC8 /* AppDelegate.swift */; };
 		3F40181025F6AB5F003C0FC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F40180F25F6AB5F003C0FC8 /* SceneDelegate.swift */; };
-		3F40181225F6AB5F003C0FC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F40181125F6AB5F003C0FC8 /* ViewController.swift */; };
 		3F40181725F6AB62003C0FC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F40181625F6AB62003C0FC8 /* Assets.xcassets */; };
 		3F40181A25F6AB62003C0FC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F40181825F6AB62003C0FC8 /* LaunchScreen.storyboard */; };
+		3FCED01A25F766E400F30204 /* Observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCED01925F766E400F30204 /* Observers.swift */; };
+		3FCED02425F7D15000F30204 /* CitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCED02325F7D15000F30204 /* CitiesListViewController.swift */; };
+		3FCED02925F7F4FC00F30204 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCED02825F7F4FC00F30204 /* UICollectionView.swift */; };
+		3FCED02D25F8263E00F30204 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCED02C25F8263E00F30204 /* UIView.swift */; };
+		3FCED03125F8279400F30204 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCED03025F8279400F30204 /* CityCollectionViewCell.swift */; };
+		3FCED03425F829DE00F30204 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCED03325F829DE00F30204 /* City.swift */; };
+		3FCED03825F82A1300F30204 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCED03725F82A1300F30204 /* ApiService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +26,16 @@
 		3F40180A25F6AB5F003C0FC8 /* bodyguard-tech-assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bodyguard-tech-assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F40180D25F6AB5F003C0FC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F40180F25F6AB5F003C0FC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3F40181125F6AB5F003C0FC8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3F40181625F6AB62003C0FC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F40181925F6AB62003C0FC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F40181B25F6AB62003C0FC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FCED01925F766E400F30204 /* Observers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observers.swift; sourceTree = "<group>"; };
+		3FCED02325F7D15000F30204 /* CitiesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListViewController.swift; sourceTree = "<group>"; };
+		3FCED02825F7F4FC00F30204 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		3FCED02C25F8263E00F30204 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		3FCED03025F8279400F30204 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
+		3FCED03325F829DE00F30204 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		3FCED03725F82A1300F30204 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		8C11D1347D17680282C5C3BC /* Pods-bodyguard-tech-assessment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bodyguard-tech-assessment.release.xcconfig"; path = "Target Support Files/Pods-bodyguard-tech-assessment/Pods-bodyguard-tech-assessment.release.xcconfig"; sourceTree = "<group>"; };
 		C94A213AE319F2EA7698F1F3 /* Pods-bodyguard-tech-assessment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bodyguard-tech-assessment.debug.xcconfig"; path = "Target Support Files/Pods-bodyguard-tech-assessment/Pods-bodyguard-tech-assessment.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,35 +81,21 @@
 		3F40180C25F6AB5F003C0FC8 /* bodyguard-tech-assessment */ = {
 			isa = PBXGroup;
 			children = (
-				3F9DC78425F6DD1500BCF4B3 /* Helpers */,
-				3F9DC78525F6DD1C00BCF4B3 /* Models */,
+				3FCED01625F6E2B900F30204 /* Helpers */,
+				3FCED01725F6E2CA00F30204 /* Models */,
 				3F9DC78725F6DD3600BCF4B3 /* Ressources */,
+				3FCED01825F6E2D500F30204 /* Services */,
 				3F9DC78625F6DD2900BCF4B3 /* Screens */,
-				3F9DC78825F6DD4400BCF4B3 /* Services */,
 				3F9DC78925F6DD7900BCF4B3 /* Supporting Files */,
 				3F40181825F6AB62003C0FC8 /* LaunchScreen.storyboard */,
 			);
 			path = "bodyguard-tech-assessment";
 			sourceTree = "<group>";
 		};
-		3F9DC78425F6DD1500BCF4B3 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		3F9DC78525F6DD1C00BCF4B3 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		3F9DC78625F6DD2900BCF4B3 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				3F40181125F6AB5F003C0FC8 /* ViewController.swift */,
+				3FCED02225F7D12600F30204 /* CitiesList Screen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -110,21 +108,81 @@
 			path = Ressources;
 			sourceTree = "<group>";
 		};
-		3F9DC78825F6DD4400BCF4B3 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		3F9DC78925F6DD7900BCF4B3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				3F40180D25F6AB5F003C0FC8 /* AppDelegate.swift */,
-				3F40181B25F6AB62003C0FC8 /* Info.plist */,
 				3F40180F25F6AB5F003C0FC8 /* SceneDelegate.swift */,
+				3F40181B25F6AB62003C0FC8 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3FCED01625F6E2B900F30204 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3FCED02625F7F3FC00F30204 /* Extensions */,
+				3FCED01925F766E400F30204 /* Observers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3FCED01725F6E2CA00F30204 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3FCED03325F829DE00F30204 /* City.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3FCED01825F6E2D500F30204 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3FCED03625F82A0400F30204 /* API Service */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3FCED02225F7D12600F30204 /* CitiesList Screen */ = {
+			isa = PBXGroup;
+			children = (
+				3FCED02F25F8273100F30204 /* Supporting Views */,
+				3FCED02325F7D15000F30204 /* CitiesListViewController.swift */,
+			);
+			path = "CitiesList Screen";
+			sourceTree = "<group>";
+		};
+		3FCED02625F7F3FC00F30204 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3FCED02725F7F40A00F30204 /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3FCED02725F7F40A00F30204 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				3FCED02825F7F4FC00F30204 /* UICollectionView.swift */,
+				3FCED02C25F8263E00F30204 /* UIView.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		3FCED02F25F8273100F30204 /* Supporting Views */ = {
+			isa = PBXGroup;
+			children = (
+				3FCED03025F8279400F30204 /* CityCollectionViewCell.swift */,
+			);
+			path = "Supporting Views";
+			sourceTree = "<group>";
+		};
+		3FCED03625F82A0400F30204 /* API Service */ = {
+			isa = PBXGroup;
+			children = (
+				3FCED03725F82A1300F30204 /* ApiService.swift */,
+			);
+			path = "API Service";
 			sourceTree = "<group>";
 		};
 		F8D873EDE2BA6BF0C7A30B1D /* Pods */ = {
@@ -268,9 +326,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F40181225F6AB5F003C0FC8 /* ViewController.swift in Sources */,
+				3FCED03125F8279400F30204 /* CityCollectionViewCell.swift in Sources */,
+				3FCED02925F7F4FC00F30204 /* UICollectionView.swift in Sources */,
+				3FCED01A25F766E400F30204 /* Observers.swift in Sources */,
 				3F40180E25F6AB5F003C0FC8 /* AppDelegate.swift in Sources */,
 				3F40181025F6AB5F003C0FC8 /* SceneDelegate.swift in Sources */,
+				3FCED03825F82A1300F30204 /* ApiService.swift in Sources */,
+				3FCED02D25F8263E00F30204 /* UIView.swift in Sources */,
+				3FCED03425F829DE00F30204 /* City.swift in Sources */,
+				3FCED02425F7D15000F30204 /* CitiesListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +476,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BBHWK82463;
-				INFOPLIST_FILE = "bodyguard-tech-assessment/Info.plist";
+				INFOPLIST_FILE = "bodyguard-tech-assessment/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -432,7 +496,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BBHWK82463;
-				INFOPLIST_FILE = "bodyguard-tech-assessment/Info.plist";
+				INFOPLIST_FILE = "bodyguard-tech-assessment/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

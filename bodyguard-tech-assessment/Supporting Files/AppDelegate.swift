@@ -11,17 +11,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var rootViewController: ViewController!
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        rootViewController = ViewController()
 
         self.window = UIWindow.init()
         self.window?.bounds = UIScreen.main.bounds
-        self.window?.rootViewController = rootViewController
-        self.window?.backgroundColor = .red
+        self.window?.rootViewController = CitiesListViewController()
         self.window?.makeKeyAndVisible()
         
         return true
