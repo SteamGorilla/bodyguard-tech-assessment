@@ -16,9 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
+        let viewModel = CityListViewModel()
         self.window = UIWindow.init()
         self.window?.bounds = UIScreen.main.bounds
-        self.window?.rootViewController = CitiesListViewController()
+        self.window?.rootViewController = CitiesListViewController(viewModel: viewModel)
         self.window?.makeKeyAndVisible()
         
         return true
