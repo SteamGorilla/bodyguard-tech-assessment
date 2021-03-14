@@ -14,10 +14,10 @@ class CitiesListViewController: UIViewController {
     private var citiesListCollectionView = UICollectionView(withFlowLayout: true)
 
     // MARK: - Properties
-    private var viewModel: CityListViewModel
+    private var viewModel: CitiesListViewModel
 
     // MARK: - Initialization
-    init(viewModel: CityListViewModel) {
+    init(viewModel: CitiesListViewModel) {
         self.viewModel = viewModel
 
         super.init(nibName: nil, bundle: nil)
@@ -33,6 +33,10 @@ class CitiesListViewController: UIViewController {
 
         setupUI()
         setupConstraints()
+        viewModel.getWeather()
+        viewModel.group.notify(queue: .main) { [weak self] in
+            self?.citiesListCollectionView.reloadData()
+        }
     }
 
     // MARK: - UI setup
@@ -41,7 +45,7 @@ class CitiesListViewController: UIViewController {
 
         // Cities CollectionView
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 10, right: 20)
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 15, bottom: 20, right: 15)
         layout.scrollDirection = .vertical
 
         citiesListCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
@@ -65,7 +69,7 @@ class CitiesListViewController: UIViewController {
 // MARK: - CollectionViewDataSource
 extension CitiesListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Constants.cities.count
+        return viewModel.weathers.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -77,6 +81,10 @@ extension CitiesListViewController: UICollectionViewDataSource {
         cell.layer.cornerRadius = 15
         cell.setShadow()
 
+        cell.id = indexPath.item
+        cell.weatherData = viewModel.weathers[indexPath.item]
+        cell.cityData = viewModel.cities[indexPath.item]
+
         return cell
     }
 }
@@ -86,12 +94,12 @@ extension CitiesListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 320.0, height: 130.0)
+        return CGSize(width: 340.0, height: 115.0)
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return  30
+        return  15
     }
 }

@@ -16,7 +16,7 @@ struct Weather: Codable {
 struct Current: Codable {
     let dt: Int?
     let temp: Double?
-    let weather: [WeatherConditions]?
+    let weather: [WeatherConditions]
 }
 
 struct Daily: Codable {
@@ -33,8 +33,14 @@ struct Hourly: Codable {
 
 struct WeatherConditions: Codable {
     let main: String?
-    let description: String?
+    let customDescription: String?
     let icon: String?
+
+    enum CodingKeys: String, CodingKey {
+        case customDescription = "description"
+        case main
+        case icon
+    }
 }
 
 struct Temperatures: Codable {
