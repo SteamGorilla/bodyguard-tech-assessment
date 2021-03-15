@@ -32,6 +32,8 @@ class CityCollectionViewCell: UICollectionViewCell {
         }
     }
 
+    let currentTimeZone = TimeZone.current
+
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -119,7 +121,7 @@ class CityCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Data Setup
     private func setupWeatherDatas(from weatherData: Weather) {
-        time.text = "10:46"
+        time.text = TimeManager.getTimeFromTimestamp(timestamp: weatherData.current?.dt ?? 0, timezone: weatherData.timezone ?? "")
         temperatures.text = "\(weatherData.current?.temp?.toInt() ?? 0) °C"
         weatherConditions.text = weatherData.current?.weather[0].customDescription?.capitalizingFirstLetter()
         weather.image = IconManager.setIcon(from: weatherData.current?.weather[0].icon ?? "")

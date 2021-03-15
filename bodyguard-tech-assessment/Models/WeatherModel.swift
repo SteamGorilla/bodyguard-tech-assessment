@@ -9,24 +9,25 @@ import Foundation
 
 struct Weather: Codable {
     let current: Current?
+    let timezone: String?
     let daily: [Daily]?
     let hourly: [Hourly]?
 }
 
 struct Current: Codable {
-    let dt: Int?
+    let dt: Double?
     let temp: Double?
     let weather: [WeatherConditions]
 }
 
 struct Daily: Codable {
-    let dt: Int?
+    let dt: Double?
     let temp: Temperatures?
     let weather: [WeatherConditions]?
 }
 
 struct Hourly: Codable {
-    let dt: Int
+    let dt: Double
     let temp: Double?
     let weather: [WeatherConditions]?
 }

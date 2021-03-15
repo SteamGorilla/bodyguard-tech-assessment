@@ -12,6 +12,7 @@ class CitiesListViewController: UIViewController {
 
     // MARK: - UI Elements
     private var citiesListCollectionView = UICollectionView(withFlowLayout: true)
+    private var activityIndicator = UIActivityIndicatorView()
 
     // MARK: - Properties
     private var viewModel: CitiesListViewModel
@@ -33,10 +34,15 @@ class CitiesListViewController: UIViewController {
 
         setupUI()
         setupConstraints()
+        setupObservers()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
         viewModel.getWeather()
-        viewModel.group.notify(queue: .main) { [weak self] in
-            self?.citiesListCollectionView.reloadData()
-        }
     }
 
     // MARK: - UI setup
@@ -56,6 +62,9 @@ class CitiesListViewController: UIViewController {
         citiesListCollectionView.register(CityCollectionViewCell.self, forCellWithReuseIdentifier: "CitiesListCollectionViewCell")
 
         view.addSubview(citiesListCollectionView)
+
+        activityIndicator.center = self.view.center
+        view.addSubview(activityIndicator)
     }
 
     // MARK: - Constraints setup
@@ -64,12 +73,25 @@ class CitiesListViewController: UIViewController {
             $0.edges.equalToSuperview()
         }
     }
+
+    // MARK: - Observers setup
+    private func setupObservers() {
+        viewModel.weathers.bind(self) { [weak self] _ in
+
+            DispatchQueue.main.async {
+                self?.activityIndicator.stopAnimating()
+                self?.activityIndicator.isHidden = true
+
+                self?.citiesListCollectionView.reloadData()
+            }
+        }
+    }
 }
 
 // MARK: - CollectionViewDataSource
 extension CitiesListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.weathers.count
+        return viewModel.weathers.value.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -82,7 +104,7 @@ extension CitiesListViewController: UICollectionViewDataSource {
         cell.setShadow()
 
         cell.id = indexPath.item
-        cell.weatherData = viewModel.weathers[indexPath.item]
+        cell.weatherData = viewModel.weathers.value[indexPath.item]
         cell.cityData = viewModel.cities[indexPath.item]
 
         return cell

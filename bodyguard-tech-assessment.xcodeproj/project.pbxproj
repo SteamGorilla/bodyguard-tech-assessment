@@ -18,6 +18,7 @@
 		3F9994A125FE44BD00061E3E /* IconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9994A025FE44BD00061E3E /* IconManager.swift */; };
 		3F9994A525FE6A1300061E3E /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9994A425FE6A1300061E3E /* Double.swift */; };
 		3F9994A925FE6E7B00061E3E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9994A825FE6E7B00061E3E /* String.swift */; };
+		3F9994AC25FE77A200061E3E /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9994AB25FE77A200061E3E /* TimeManager.swift */; };
 		3FCED01A25F766E400F30204 /* Observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCED01925F766E400F30204 /* Observers.swift */; };
 		3FCED02425F7D15000F30204 /* CitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCED02325F7D15000F30204 /* CitiesListViewController.swift */; };
 		3FCED02925F7F4FC00F30204 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCED02825F7F4FC00F30204 /* UICollectionView.swift */; };
@@ -41,6 +42,7 @@
 		3F9994A025FE44BD00061E3E /* IconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconManager.swift; sourceTree = "<group>"; };
 		3F9994A425FE6A1300061E3E /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		3F9994A825FE6E7B00061E3E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		3F9994AB25FE77A200061E3E /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		3FCED01925F766E400F30204 /* Observers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observers.swift; sourceTree = "<group>"; };
 		3FCED02325F7D15000F30204 /* CitiesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListViewController.swift; sourceTree = "<group>"; };
 		3FCED02825F7F4FC00F30204 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				3FCED01925F766E400F30204 /* Observers.swift */,
 				3F99949125FACFA000061E3E /* Constants.swift */,
 				3F9994A025FE44BD00061E3E /* IconManager.swift */,
+				3F9994AB25FE77A200061E3E /* TimeManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				3F40180E25F6AB5F003C0FC8 /* AppDelegate.swift in Sources */,
 				3F99948A25FAB81A00061E3E /* WeatherModel.swift in Sources */,
 				3F99949625FB7F7200061E3E /* CitiesListViewModel.swift in Sources */,
+				3F9994AC25FE77A200061E3E /* TimeManager.swift in Sources */,
 				3F9994A525FE6A1300061E3E /* Double.swift in Sources */,
 				3F40181025F6AB5F003C0FC8 /* SceneDelegate.swift in Sources */,
 				3FCED03825F82A1300F30204 /* ApiService.swift in Sources */,

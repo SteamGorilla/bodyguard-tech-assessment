@@ -14,6 +14,6 @@ import Foundation
         City.init(name: "Londres", lat: "51.5073219", lon: "-0.1276474"),
         City.init(name: "Singapore", lat: "1.357107", lon: "103.8194992"),
         City.init(name: "Montreal", lat: "45.4972159", lon: "-73.6103642"),
-        City.init(name: "Cuba", lat: "23.0131338", lon: "-80.8328748")
+        City.init(name: "Seoul", lat: "37.5666791", lon: "126.9782914")
     ]
 }
