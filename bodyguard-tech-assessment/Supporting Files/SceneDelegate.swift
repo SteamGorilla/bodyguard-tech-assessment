@@ -16,11 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        let viewModel = CitiesListViewModel()
 
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = ViewController()
-        window?.rootViewController?.view.backgroundColor = .red
+        window?.rootViewController = CitiesListViewController(viewModel: viewModel)
         window?.makeKeyAndVisible()
     }
 
