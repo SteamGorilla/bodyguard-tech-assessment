@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let viewModel = CitiesListViewModel()
         self.window = UIWindow.init()
         self.window?.bounds = UIScreen.main.bounds
-        self.window?.rootViewController = CitiesListViewController(viewModel: viewModel)
+        self.window?.rootViewController = UINavigationController(rootViewController: CitiesListViewController(viewModel: viewModel))
         self.window?.makeKeyAndVisible()
         
         return true

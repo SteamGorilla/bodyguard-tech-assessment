@@ -39,6 +39,7 @@ class CitiesListViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
 
         activityIndicator.startAnimating()
         activityIndicator.isHidden = false
@@ -108,6 +109,13 @@ extension CitiesListViewController: UICollectionViewDataSource {
         cell.cityData = viewModel.cities[indexPath.item]
 
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailViewModel = DetailViewModel(weatherData: viewModel.weathers.value[indexPath.item],
+                                              city: viewModel.cities[indexPath.item].name)
+
+        self.navigationController?.pushViewController(DetailViewController(viewModel: detailViewModel), animated: true)
     }
 }
 
