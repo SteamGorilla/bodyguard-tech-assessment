@@ -64,6 +64,7 @@ class CitiesListViewController: UIViewController {
 
         view.addSubview(citiesListCollectionView)
 
+        // Activity Indicator
         activityIndicator.center = self.view.center
         view.addSubview(activityIndicator)
     }

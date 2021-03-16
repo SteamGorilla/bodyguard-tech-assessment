@@ -11,7 +11,7 @@ class TimeManager {
     static func getTimeFromTimestamp(timestamp: Double, timezone: String) -> String {
         let date = Date(timeIntervalSince1970: timestamp)
         let dateFormatter = DateFormatter()
-        dateFormatter.timeStyle = DateFormatter.Style.short 
+        dateFormatter.timeStyle = DateFormatter.Style.short
         dateFormatter.dateStyle = DateFormatter.Style.none
         dateFormatter.timeZone = TimeZone(identifier: timezone)
         dateFormatter.locale = Locale.autoupdatingCurrent
