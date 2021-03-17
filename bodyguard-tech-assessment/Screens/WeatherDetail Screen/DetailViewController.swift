@@ -57,7 +57,8 @@ class DetailViewController: UIViewController {
         self.navigationController?.view.backgroundColor = .clear
 
         // Content View
-
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(contentView)
 
         // City Label
         city.font = UIFont(name: "HelveticaNeue-Bold", size: 52.0)
@@ -109,7 +110,7 @@ class DetailViewController: UIViewController {
         contentView.addSubview(hourlyWeatherCollectionView)
 
         // Daily Weather TableView
-        dailyWeatherTableView = UITableView(frame: self.view.frame, style: .grouped)// UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        dailyWeatherTableView = UITableView(frame: self.view.frame, style: .grouped)
         dailyWeatherTableView.delegate = self
         dailyWeatherTableView.dataSource = self
         dailyWeatherTableView.backgroundColor = .clear
@@ -120,16 +121,11 @@ class DetailViewController: UIViewController {
         contentView.addSubview(dailyWeatherTableView)
 
         // Scroll View
-//        let screensize: CGRect = UIScreen.main.bounds
-//        let screenWidth = screensize.width
-//        let screenHeight = screensize.height
-//        scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
-        //scrollView.contentSize = contentView.frame.size
+        scrollView.contentSize = contentView.frame.size
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.delegate = self
         scrollView.isUserInteractionEnabled = true
         scrollView.bounces = true
-        scrollView.addSubview(contentView)
         self.view.addSubview(scrollView)
     }
 
@@ -137,7 +133,7 @@ class DetailViewController: UIViewController {
     private func setupConstraints() {
         city.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.top.equalToSuperview()
         }
 
         currentConditions.snp.makeConstraints {
@@ -170,16 +166,14 @@ class DetailViewController: UIViewController {
         dailyWeatherTableView.snp.makeConstraints {
             $0.top.equalTo(hourlyWeatherCollectionView.snp.bottom)
             $0.left.right.equalToSuperview()
-            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            $0.bottom.equalToSuperview()
         }
 
         contentView.snp.makeConstraints {
-//            $0.center.equalToSuperview().priority(20)
-//            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-//            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).priority(20)
-//            $0.leading.trailing.equalToSuperview()
-            $0.edges.equalToSuperview()
-            $0.center.equalToSuperview()
+            $0.left.right.equalToSuperview()
+            $0.bottom.top.equalToSuperview().priority(250)
+            $0.centerY.equalToSuperview().priority(250)
+            $0.centerX.equalToSuperview()
         }
 
         scrollView.snp.makeConstraints {
@@ -244,7 +238,6 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 }
-
 
 extension DetailViewController {
 
