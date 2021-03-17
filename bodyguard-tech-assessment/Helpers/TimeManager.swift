@@ -13,6 +13,7 @@ class TimeManager {
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = DateFormatter.Style.short
         dateFormatter.dateStyle = DateFormatter.Style.none
+        dateFormatter.dateFormat = "HH:mm"
         dateFormatter.timeZone = TimeZone(identifier: timezone)
         dateFormatter.locale = Locale.autoupdatingCurrent
         let localDate = dateFormatter.string(from: date)

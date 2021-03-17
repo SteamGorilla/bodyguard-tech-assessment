@@ -240,6 +240,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
 
         cell.dailyWeatherData = viewModel.weatherData.daily?[indexPath.row]
         cell.backgroundColor = .clear
+        cell.selectionStyle = .none
         return cell
     }
 }
