@@ -17,6 +17,9 @@ class DetailViewController: UIViewController {
     private var currentTemperature = UILabel()
     private var minMaxTemperature = UILabel()
     private var hourlyWeatherCollectionView = UICollectionView(withFlowLayout: true)
+    private var dailyWeatherTableView = UITableView()
+    private var scrollView = UIScrollView()
+    private var contentView = UIView()
 
     // MARK: - Properties
     private var viewModel: DetailViewModel
@@ -53,13 +56,16 @@ class DetailViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = .white
         self.navigationController?.view.backgroundColor = .clear
 
+        // Content View
+
+
         // City Label
         city.font = UIFont(name: "HelveticaNeue-Bold", size: 52.0)
         city.textColor = .white
         city.translatesAutoresizingMaskIntoConstraints = false
         city.adjustsFontSizeToFitWidth = false
         city.numberOfLines = 0
-        self.view.addSubview(city)
+        contentView.addSubview(city)
 
         // Current ConditionsLabel
         currentConditions.font = UIFont(name: "HelveticaNeue", size: 22.0)
@@ -67,11 +73,11 @@ class DetailViewController: UIViewController {
         currentConditions.translatesAutoresizingMaskIntoConstraints = false
         currentConditions.adjustsFontSizeToFitWidth = false
         currentConditions.numberOfLines = 0
-        self.view.addSubview(currentConditions)
+        contentView.addSubview(currentConditions)
 
         // Weather Icon
         weatherIcon.image = IconManager.setIcon(from: viewModel.weatherData.current?.weather[0].icon ?? "")
-        self.view.addSubview(weatherIcon)
+        contentView.addSubview(weatherIcon)
 
         // Current Temperature Label
         currentTemperature.font = UIFont(name: "HelveticaNeue-Bold", size: 52.0)
@@ -79,7 +85,7 @@ class DetailViewController: UIViewController {
         currentTemperature.translatesAutoresizingMaskIntoConstraints = false
         currentTemperature.adjustsFontSizeToFitWidth = false
         currentTemperature.numberOfLines = 0
-        self.view.addSubview(currentTemperature)
+        contentView.addSubview(currentTemperature)
 
         // Min Temperature Label
         minMaxTemperature.font = UIFont(name: "HelveticaNeue-Bold", size: 22.0)
@@ -87,7 +93,7 @@ class DetailViewController: UIViewController {
         minMaxTemperature.translatesAutoresizingMaskIntoConstraints = false
         minMaxTemperature.adjustsFontSizeToFitWidth = false
         minMaxTemperature.numberOfLines = 0
-        self.view.addSubview(minMaxTemperature)
+        contentView.addSubview(minMaxTemperature)
 
         // Hourly Weather CollectionView
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -100,7 +106,31 @@ class DetailViewController: UIViewController {
         hourlyWeatherCollectionView.backgroundColor = .clear
         hourlyWeatherCollectionView.register(HourlyCollectionViewCell.self, forCellWithReuseIdentifier: "HourlyWeatherCollectionViewCell")
         hourlyWeatherCollectionView.showsHorizontalScrollIndicator = false
-        self.view.addSubview(hourlyWeatherCollectionView)
+        contentView.addSubview(hourlyWeatherCollectionView)
+
+        // Daily Weather TableView
+        dailyWeatherTableView = UITableView(frame: self.view.frame, style: .grouped)// UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        dailyWeatherTableView.delegate = self
+        dailyWeatherTableView.dataSource = self
+        dailyWeatherTableView.backgroundColor = .clear
+        dailyWeatherTableView.separatorColor = .white
+        dailyWeatherTableView.register(DailyTableViewCell.self, forCellReuseIdentifier: "DailyTableViewCell")
+        dailyWeatherTableView.showsVerticalScrollIndicator = false
+        dailyWeatherTableView.isScrollEnabled = false
+        contentView.addSubview(dailyWeatherTableView)
+
+        // Scroll View
+//        let screensize: CGRect = UIScreen.main.bounds
+//        let screenWidth = screensize.width
+//        let screenHeight = screensize.height
+//        scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
+        //scrollView.contentSize = contentView.frame.size
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.delegate = self
+        scrollView.isUserInteractionEnabled = true
+        scrollView.bounces = true
+        scrollView.addSubview(contentView)
+        self.view.addSubview(scrollView)
     }
 
     // MARK: - Constraints setup
@@ -136,6 +166,25 @@ class DetailViewController: UIViewController {
             $0.left.right.equalToSuperview()
             $0.height.equalTo(105.0)
         }
+
+        dailyWeatherTableView.snp.makeConstraints {
+            $0.top.equalTo(hourlyWeatherCollectionView.snp.bottom)
+            $0.left.right.equalToSuperview()
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
+
+        contentView.snp.makeConstraints {
+//            $0.center.equalToSuperview().priority(20)
+//            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+//            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).priority(20)
+//            $0.leading.trailing.equalToSuperview()
+            $0.edges.equalToSuperview()
+            $0.center.equalToSuperview()
+        }
+
+        scrollView.snp.makeConstraints {
+            $0.top.bottom.leading.trailing.equalToSuperview()//(view.safeAreaLayoutGuide.snp.edges)
+        }
     }
 
     // MARK: - Data setup
@@ -156,7 +205,7 @@ extension DetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HourlyWeatherCollectionViewCell",
                                                             for: indexPath) as? HourlyCollectionViewCell else { return UICollectionViewCell() }
-
+        cell.backgroundColor = .clear
         cell.hourlyWeatherData = viewModel.weatherData.hourly?[indexPath.item]
 
         return cell
@@ -178,6 +227,23 @@ extension DetailViewController: UICollectionViewDelegateFlowLayout {
         return  15
     }
 }
+
+// MARK: - TableviewDataSource
+extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.weatherData.daily?.count ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DailyTableViewCell",
+                                                       for: indexPath) as? DailyTableViewCell else { return UITableViewCell() }
+
+        cell.dailyWeatherData = viewModel.weatherData.daily?[indexPath.row]
+        cell.backgroundColor = .clear
+        return cell
+    }
+}
+
 
 extension DetailViewController {
 

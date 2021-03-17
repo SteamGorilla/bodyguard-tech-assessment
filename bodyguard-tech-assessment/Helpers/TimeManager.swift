@@ -20,4 +20,13 @@ class TimeManager {
 
         return localDate
     }
+
+    static func getWeekDayFromTimestamp(timestamp: Double) -> String {
+        let date = Date(timeIntervalSince1970: timestamp)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let weekDayString = dateFormatter.string(from: date)
+
+        return weekDayString
+    }
 }
