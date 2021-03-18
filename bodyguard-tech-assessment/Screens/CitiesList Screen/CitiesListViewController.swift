@@ -55,16 +55,14 @@ class CitiesListViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 20, left: 15, bottom: 20, right: 15)
         layout.scrollDirection = .vertical
 
-        citiesListCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-
+        citiesListCollectionView.collectionViewLayout = layout
         citiesListCollectionView.delegate = self
         citiesListCollectionView.dataSource = self
         citiesListCollectionView.backgroundColor = .clear
         citiesListCollectionView.register(CityCollectionViewCell.self, forCellWithReuseIdentifier: "CitiesListCollectionViewCell")
-
         view.addSubview(citiesListCollectionView)
 
-        activityIndicator.center = self.view.center
+        // Activity Indicator
         view.addSubview(activityIndicator)
     }
 
@@ -72,6 +70,10 @@ class CitiesListViewController: UIViewController {
     private func setupConstraints() {
         citiesListCollectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+
+        activityIndicator.snp.makeConstraints {
+            $0.center.equalToSuperview()
         }
     }
 
@@ -96,15 +98,12 @@ extension CitiesListViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CitiesListCollectionViewCell", for: indexPath) as? CityCollectionViewCell else { return UICollectionViewCell() }
-
-        cell.backgroundColor = .white
-        cell.layer.borderColor = #colorLiteral(red: 0.9647058824, green: 0.9647058824, blue: 0.9647058824, alpha: 1)
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 15
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CitiesListCollectionViewCell",
+                                                            for: indexPath) as? CityCollectionViewCell
+        else { return UICollectionViewCell() }
+        
         cell.setShadow()
 
-        cell.id = indexPath.item
         cell.weatherData = viewModel.weathers.value[indexPath.item]
         cell.cityData = viewModel.cities[indexPath.item]
 

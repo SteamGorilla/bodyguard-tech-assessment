@@ -19,7 +19,6 @@ class CityCollectionViewCell: UICollectionViewCell {
     private let weatherConditions = UILabel()
 
     // MARK: - Properties
-    var id: Int?
     var weatherData: Weather? {
         didSet {
             setupWeatherDatas(from: weatherData!)
@@ -46,13 +45,14 @@ class CityCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func prepareForReuse() {
-
-    }
-
     // MARK: - UI Setup
     private func setupUI() {
         self.isUserInteractionEnabled = true
+
+        self.backgroundColor = .white
+        self.layer.borderColor = #colorLiteral(red: 0.9647058824, green: 0.9647058824, blue: 0.9647058824, alpha: 1)
+        self.layer.borderWidth = 1
+        self.layer.cornerRadius = 15
 
         // City Label
         city.font = UIFont(name: "HelveticaNeue-Bold", size: 24.0)
@@ -103,7 +103,7 @@ class CityCollectionViewCell: UICollectionViewCell {
         }
 
         time.snp.makeConstraints {
-            $0.top.equalTo(city.snp.bottom).offset(3)
+            $0.top.equalTo(city.snp.bottom).offset(Layout.offset)
             $0.left.equalTo(Layout.left)
         }
 
@@ -113,7 +113,7 @@ class CityCollectionViewCell: UICollectionViewCell {
         }
 
         weather.snp.makeConstraints {
-            $0.width.height.equalTo(50.0)
+            $0.width.height.equalTo(Layout.size)
             $0.top.equalTo(Layout.top)
             $0.right.equalTo(Layout.right)
         }
@@ -121,7 +121,8 @@ class CityCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Data Setup
     private func setupWeatherDatas(from weatherData: Weather) {
-        time.text = TimeManager.getTimeFromTimestamp(timestamp: weatherData.current?.dt ?? 0, timezone: weatherData.timezone ?? "")
+        time.text = TimeManager.getTimeFromTimestamp(timestamp: weatherData.current?.dt ?? 0,
+                                                     timezone: weatherData.timezone ?? "")
         temperatures.text = "\(weatherData.current?.temp?.toInt() ?? 0) °C"
         weatherConditions.text = weatherData.current?.weather[0].customDescription?.capitalizingFirstLetter()
         weather.image = IconManager.setIcon(from: weatherData.current?.weather[0].icon ?? "")
@@ -139,6 +140,7 @@ extension CityCollectionViewCell {
         static let bottom: CGFloat = -18.0
         static let left: CGFloat = 18.0
         static let right: CGFloat = -15.0
-        static let offset: CGFloat = 5.0
+        static let offset: CGFloat = 3.0
+        static let size: CGFloat = 50.0
     }
 }
