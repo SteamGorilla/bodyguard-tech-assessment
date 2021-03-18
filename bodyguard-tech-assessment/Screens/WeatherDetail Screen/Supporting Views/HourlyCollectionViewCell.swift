@@ -63,17 +63,17 @@ class HourlyCollectionViewCell: UICollectionViewCell {
     private func setupConstraints() {
         hourLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(5.0)
+            $0.top.equalTo(Layout.top)
         }
 
         weatherIcon.snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.width.height.equalTo(25.0)
+            $0.width.height.equalTo(Layout.size)
         }
 
         temperature.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.bottom.equalTo(-7.0)
+            $0.bottom.equalTo(Layout.bottom)
         }
     }
 
@@ -82,5 +82,14 @@ class HourlyCollectionViewCell: UICollectionViewCell {
         hourLabel.text = TimeManager.getTimeFromTimestamp(timestamp: data.dt, timezone: "Europe/Paris")
         weatherIcon.image = IconManager.setIcon(from: data.weather?[0].icon ?? "")
         temperature.text = "\(data.temp?.toInt() ?? 0)°"
+    }
+}
+
+extension HourlyCollectionViewCell {
+
+    enum Layout {
+        static let top: CGFloat = 5.0
+        static let bottom: CGFloat = -7.0
+        static let size: CGFloat = 25
     }
 }

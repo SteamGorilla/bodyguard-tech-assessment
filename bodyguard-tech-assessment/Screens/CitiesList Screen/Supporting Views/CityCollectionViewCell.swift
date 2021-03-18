@@ -103,7 +103,7 @@ class CityCollectionViewCell: UICollectionViewCell {
         }
 
         time.snp.makeConstraints {
-            $0.top.equalTo(city.snp.bottom).offset(3)
+            $0.top.equalTo(city.snp.bottom).offset(Layout.offset)
             $0.left.equalTo(Layout.left)
         }
 
@@ -113,7 +113,7 @@ class CityCollectionViewCell: UICollectionViewCell {
         }
 
         weather.snp.makeConstraints {
-            $0.width.height.equalTo(50.0)
+            $0.width.height.equalTo(Layout.size)
             $0.top.equalTo(Layout.top)
             $0.right.equalTo(Layout.right)
         }
@@ -140,6 +140,7 @@ extension CityCollectionViewCell {
         static let bottom: CGFloat = -18.0
         static let left: CGFloat = 18.0
         static let right: CGFloat = -15.0
-        static let offset: CGFloat = 5.0
+        static let offset: CGFloat = 3.0
+        static let size: CGFloat = 50.0
     }
 }

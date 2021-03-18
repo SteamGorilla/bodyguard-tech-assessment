@@ -70,7 +70,7 @@ class DailyTableViewCell: UITableViewCell {
     private func setupConstraints() {
         weekday.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.left.equalTo(25.0)
+            $0.left.equalTo(Layout.left)
         }
 
         weatherIcon.snp.makeConstraints {
@@ -79,12 +79,12 @@ class DailyTableViewCell: UITableViewCell {
 
         maxTemperature.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.right.equalTo(-75)
+            $0.right.equalTo(Layout.bigRight)
         }
 
         minTemperature.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.right.equalTo(-25.0)
+            $0.right.equalTo(Layout.right)
         }
     }
 
@@ -94,5 +94,14 @@ class DailyTableViewCell: UITableViewCell {
         weatherIcon.image = IconManager.setIcon(from: data.weather?[0].icon ?? "")
         maxTemperature.text = "\(data.temp?.max?.toInt() ?? 0)°"
         minTemperature.text = "\(data.temp?.min?.toInt() ?? 0)°"
+    }
+}
+
+extension DailyTableViewCell {
+
+    enum Layout {
+        static let left: CGFloat = 25
+        static let right: CGFloat = -25.0
+        static let bigRight: CGFloat = -75.0
     }
 }
