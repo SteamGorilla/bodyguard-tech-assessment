@@ -46,15 +46,20 @@ class DetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - UI setup
-    private func setupUI() {
-        view.backgroundColor = #colorLiteral(red: 0.3137254902, green: 0.4980392157, blue: 0.9882352941, alpha: 1)
-
+    private func setupNavigationController() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.tintColor = .white
         self.navigationController?.view.backgroundColor = .clear
+    }
+
+    // MARK: - UI setup
+    private func setupUI() {
+        view.backgroundColor = #colorLiteral(red: 0.3137254902, green: 0.4980392157, blue: 0.9882352941, alpha: 1)
+
+        setupNavigationController()
+        setupTableViewAndCollectionView()
 
         // Content View
         contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -96,16 +101,28 @@ class DetailViewController: UIViewController {
         minMaxTemperature.numberOfLines = 0
         contentView.addSubview(minMaxTemperature)
 
+        // Scroll View
+        self.scrollView.contentSize = contentView.frame.size
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.delegate = self
+        scrollView.isUserInteractionEnabled = true
+        scrollView.bounces = true
+        self.view.addSubview(scrollView)
+    }
+
+    // TableView & CollectionView Setup
+    private func setupTableViewAndCollectionView() {
         // Hourly Weather CollectionView
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         layout.scrollDirection = .horizontal
 
-        hourlyWeatherCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        hourlyWeatherCollectionView.collectionViewLayout = layout
         hourlyWeatherCollectionView.delegate = self
         hourlyWeatherCollectionView.dataSource = self
         hourlyWeatherCollectionView.backgroundColor = .clear
-        hourlyWeatherCollectionView.register(HourlyCollectionViewCell.self, forCellWithReuseIdentifier: "HourlyWeatherCollectionViewCell")
+        hourlyWeatherCollectionView.register(HourlyCollectionViewCell.self,
+                                             forCellWithReuseIdentifier: "HourlyWeatherCollectionViewCell")
         hourlyWeatherCollectionView.showsHorizontalScrollIndicator = false
         contentView.addSubview(hourlyWeatherCollectionView)
 
@@ -119,14 +136,6 @@ class DetailViewController: UIViewController {
         dailyWeatherTableView.showsVerticalScrollIndicator = false
         dailyWeatherTableView.isScrollEnabled = false
         contentView.addSubview(dailyWeatherTableView)
-
-        // Scroll View
-        scrollView.contentSize = contentView.frame.size
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.delegate = self
-        scrollView.isUserInteractionEnabled = true
-        scrollView.bounces = true
-        self.view.addSubview(scrollView)
     }
 
     // MARK: - Constraints setup
@@ -171,13 +180,17 @@ class DetailViewController: UIViewController {
 
         contentView.snp.makeConstraints {
             $0.left.right.equalToSuperview()
-            $0.bottom.top.equalToSuperview().priority(250)
-            $0.centerY.equalToSuperview().priority(250)
+            $0.top.bottom.equalToSuperview()
+            $0.centerY.equalToSuperview()
             $0.centerX.equalToSuperview()
+            $0.height.equalTo(0).priority(250)
+
         }
 
         scrollView.snp.makeConstraints {
-            $0.top.bottom.leading.trailing.equalToSuperview()//(view.safeAreaLayoutGuide.snp.edges)
+            $0.top.equalToSuperview()
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
         }
     }
 
@@ -198,8 +211,9 @@ extension DetailViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HourlyWeatherCollectionViewCell",
-                                                            for: indexPath) as? HourlyCollectionViewCell else { return UICollectionViewCell() }
-        cell.backgroundColor = .clear
+                                                            for: indexPath) as? HourlyCollectionViewCell
+        else { return UICollectionViewCell() }
+        
         cell.hourlyWeatherData = viewModel.weatherData.hourly?[indexPath.item]
 
         return cell

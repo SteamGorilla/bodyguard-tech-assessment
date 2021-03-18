@@ -23,7 +23,6 @@ class DailyTableViewCell: UITableViewCell {
         }
     }
 
-
     // MARK: - Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -34,10 +33,6 @@ class DailyTableViewCell: UITableViewCell {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    override func prepareForReuse() {
-
     }
 
     // MARK: - UI Setup
@@ -84,7 +79,7 @@ class DailyTableViewCell: UITableViewCell {
 
         maxTemperature.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.right.equalTo(minTemperature.snp.left).offset(-25.0)
+            $0.right.equalTo(-75)
         }
 
         minTemperature.snp.makeConstraints {
@@ -95,7 +90,7 @@ class DailyTableViewCell: UITableViewCell {
 
     // MARK: - Data Setup
     private func setupCellDatas(from data: Daily) {
-        weekday.text = TimeManager.getWeekDayFromTimestamp(timestamp: data.dt ?? 0) //"Lundi"
+        weekday.text = TimeManager.getWeekDayFromTimestamp(timestamp: data.dt ?? 0)
         weatherIcon.image = IconManager.setIcon(from: data.weather?[0].icon ?? "")
         maxTemperature.text = "\(data.temp?.max?.toInt() ?? 0)°"
         minTemperature.text = "\(data.temp?.min?.toInt() ?? 0)°"

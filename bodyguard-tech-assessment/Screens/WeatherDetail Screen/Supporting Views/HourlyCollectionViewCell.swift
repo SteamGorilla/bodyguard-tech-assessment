@@ -34,12 +34,11 @@ class HourlyCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func prepareForReuse() {
-
-    }
-
     // MARK: - UI Setup
     private func setupUI() {
+        self.backgroundColor = .clear
+
+        // Hourly Forecast Label
         hourLabel.font = UIFont(name: "HelveticaNeue", size: 18.0)
         hourLabel.textColor = .white
         hourLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -47,8 +46,10 @@ class HourlyCollectionViewCell: UICollectionViewCell {
         hourLabel.numberOfLines = 0
         self.addSubview(hourLabel)
 
+        // Weather Icon
         self.addSubview(weatherIcon)
 
+        // Temperature Label
         temperature.font = UIFont(name: "HelveticaNeue", size: 18.0)
         temperature.textColor = .white
         temperature.translatesAutoresizingMaskIntoConstraints = false
