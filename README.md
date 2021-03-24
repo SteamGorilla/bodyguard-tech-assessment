@@ -4,8 +4,8 @@ A simple app written in **Swift** for displaying current weather and forecasts f
 
 ## External libraries
 
-[**Snapkit**](https://github.com/SnapKit/SnapKit): for Autolayout & Constraints
-[**SwiftLint**](https://github.com/realm/SwiftLint): linter for ensuring good coding conventions
+- [**Snapkit**](https://github.com/SnapKit/SnapKit): for Autolayout & Constraints
+- [**SwiftLint**](https://github.com/realm/SwiftLint): linter for ensuring good coding conventions
 
 
 ## Screenshots
