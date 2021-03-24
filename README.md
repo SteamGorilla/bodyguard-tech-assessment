@@ -9,5 +9,5 @@ A simple app written in **Swift** for displaying current weather and forecasts f
 
 
 ## Screenshots
-![](https://i.imgur.com/FpOmX30.png)
+![](https://i.imgur.com/FpOmX30.png =812x350)
 ![](https://imgur.com/K2Rm9A4.png)
