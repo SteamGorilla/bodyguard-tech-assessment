@@ -1,6 +1,0 @@
-framework module Pods_bodyguard_tech_assessment {
-  umbrella header "Pods-bodyguard-tech-assessment-umbrella.h"
-
-  export *
-  module * { export * }
-}
