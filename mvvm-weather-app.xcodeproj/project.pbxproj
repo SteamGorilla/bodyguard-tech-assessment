@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32854D4852B9BBCDB4A9A24E /* Pods_bodyguard_tech_assessment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B9CC80A26FC1693D1E4A3F /* Pods_bodyguard_tech_assessment.framework */; };
 		3F40180E25F6AB5F003C0FC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F40180D25F6AB5F003C0FC8 /* AppDelegate.swift */; };
 		3F40181025F6AB5F003C0FC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F40180F25F6AB5F003C0FC8 /* SceneDelegate.swift */; };
 		3F40181725F6AB62003C0FC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F40181625F6AB62003C0FC8 /* Assets.xcassets */; };
@@ -30,11 +29,12 @@
 		3FCED03125F8279400F30204 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCED03025F8279400F30204 /* CityCollectionViewCell.swift */; };
 		3FCED03425F829DE00F30204 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCED03325F829DE00F30204 /* City.swift */; };
 		3FCED03825F82A1300F30204 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCED03725F82A1300F30204 /* ApiService.swift */; };
+		E2A9E7DC36FE5F192AE3B817 /* Pods_mvvm_weather_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B40C2651E749950B6FD84DA /* Pods_mvvm_weather_app.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		31B9CC80A26FC1693D1E4A3F /* Pods_bodyguard_tech_assessment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bodyguard_tech_assessment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F40180A25F6AB5F003C0FC8 /* bodyguard-tech-assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bodyguard-tech-assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		046F8DC303DFB018B13C96CC /* Pods-mvvm-weather-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mvvm-weather-app.debug.xcconfig"; path = "Target Support Files/Pods-mvvm-weather-app/Pods-mvvm-weather-app.debug.xcconfig"; sourceTree = "<group>"; };
+		3F40180A25F6AB5F003C0FC8 /* mvvm-weather-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mvvm-weather-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F40180D25F6AB5F003C0FC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F40180F25F6AB5F003C0FC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3F40181625F6AB62003C0FC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,8 +58,8 @@
 		3FCED03025F8279400F30204 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
 		3FCED03325F829DE00F30204 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		3FCED03725F82A1300F30204 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
-		8C11D1347D17680282C5C3BC /* Pods-bodyguard-tech-assessment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bodyguard-tech-assessment.release.xcconfig"; path = "Target Support Files/Pods-bodyguard-tech-assessment/Pods-bodyguard-tech-assessment.release.xcconfig"; sourceTree = "<group>"; };
-		C94A213AE319F2EA7698F1F3 /* Pods-bodyguard-tech-assessment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bodyguard-tech-assessment.debug.xcconfig"; path = "Target Support Files/Pods-bodyguard-tech-assessment/Pods-bodyguard-tech-assessment.debug.xcconfig"; sourceTree = "<group>"; };
+		7B40C2651E749950B6FD84DA /* Pods_mvvm_weather_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mvvm_weather_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E89056186EB5DD2C47489D64 /* Pods-mvvm-weather-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mvvm-weather-app.release.xcconfig"; path = "Target Support Files/Pods-mvvm-weather-app/Pods-mvvm-weather-app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,40 +67,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32854D4852B9BBCDB4A9A24E /* Pods_bodyguard_tech_assessment.framework in Frameworks */,
+				E2A9E7DC36FE5F192AE3B817 /* Pods_mvvm_weather_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		10CFB55A6C3D14C1D7474C86 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				31B9CC80A26FC1693D1E4A3F /* Pods_bodyguard_tech_assessment.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		3F40180125F6AB5F003C0FC8 = {
 			isa = PBXGroup;
 			children = (
-				3F40180C25F6AB5F003C0FC8 /* bodyguard-tech-assessment */,
+				3F40180C25F6AB5F003C0FC8 /* mvvm-weather-app */,
 				3F40180B25F6AB5F003C0FC8 /* Products */,
 				F8D873EDE2BA6BF0C7A30B1D /* Pods */,
-				10CFB55A6C3D14C1D7474C86 /* Frameworks */,
+				4679D639F2AE8DDE04A575D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		3F40180B25F6AB5F003C0FC8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3F40180A25F6AB5F003C0FC8 /* bodyguard-tech-assessment.app */,
+				3F40180A25F6AB5F003C0FC8 /* mvvm-weather-app.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3F40180C25F6AB5F003C0FC8 /* bodyguard-tech-assessment */ = {
+		3F40180C25F6AB5F003C0FC8 /* mvvm-weather-app */ = {
 			isa = PBXGroup;
 			children = (
 				3FCED01625F6E2B900F30204 /* Helpers */,
@@ -111,7 +103,7 @@
 				3F9DC78925F6DD7900BCF4B3 /* Supporting Files */,
 				3F40181825F6AB62003C0FC8 /* LaunchScreen.storyboard */,
 			);
-			path = "bodyguard-tech-assessment";
+			path = "mvvm-weather-app";
 			sourceTree = "<group>";
 		};
 		3F7E8A7925FFBCD6003F6AB6 /* WeatherDetail Screen */ = {
@@ -242,11 +234,19 @@
 			path = "API Service";
 			sourceTree = "<group>";
 		};
+		4679D639F2AE8DDE04A575D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B40C2651E749950B6FD84DA /* Pods_mvvm_weather_app.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F8D873EDE2BA6BF0C7A30B1D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C94A213AE319F2EA7698F1F3 /* Pods-bodyguard-tech-assessment.debug.xcconfig */,
-				8C11D1347D17680282C5C3BC /* Pods-bodyguard-tech-assessment.release.xcconfig */,
+				046F8DC303DFB018B13C96CC /* Pods-mvvm-weather-app.debug.xcconfig */,
+				E89056186EB5DD2C47489D64 /* Pods-mvvm-weather-app.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -254,24 +254,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3F40180925F6AB5F003C0FC8 /* bodyguard-tech-assessment */ = {
+		3F40180925F6AB5F003C0FC8 /* mvvm-weather-app */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F40181E25F6AB62003C0FC8 /* Build configuration list for PBXNativeTarget "bodyguard-tech-assessment" */;
+			buildConfigurationList = 3F40181E25F6AB62003C0FC8 /* Build configuration list for PBXNativeTarget "mvvm-weather-app" */;
 			buildPhases = (
-				34BEB6E80D77725AE090BB46 /* [CP] Check Pods Manifest.lock */,
+				0510C5C0F0C7F416E82B97B4 /* [CP] Check Pods Manifest.lock */,
 				3F40180625F6AB5F003C0FC8 /* Sources */,
 				3F40180725F6AB5F003C0FC8 /* Frameworks */,
 				3F40180825F6AB5F003C0FC8 /* Resources */,
-				C2169D4CB6D75205865BA6D9 /* [CP] Embed Pods Frameworks */,
 				3F9DC77625F6D0AC00BCF4B3 /* Swift Lint */,
+				B8EDA20C9A4A3A42153D7E8D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "bodyguard-tech-assessment";
+			name = "mvvm-weather-app";
 			productName = "bodyguard-tech-assessment";
-			productReference = 3F40180A25F6AB5F003C0FC8 /* bodyguard-tech-assessment.app */;
+			productReference = 3F40180A25F6AB5F003C0FC8 /* mvvm-weather-app.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -288,7 +288,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3F40180525F6AB5F003C0FC8 /* Build configuration list for PBXProject "bodyguard-tech-assessment" */;
+			buildConfigurationList = 3F40180525F6AB5F003C0FC8 /* Build configuration list for PBXProject "mvvm-weather-app" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -301,7 +301,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3F40180925F6AB5F003C0FC8 /* bodyguard-tech-assessment */,
+				3F40180925F6AB5F003C0FC8 /* mvvm-weather-app */,
 			);
 		};
 /* End PBXProject section */
@@ -319,7 +319,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		34BEB6E80D77725AE090BB46 /* [CP] Check Pods Manifest.lock */ = {
+		0510C5C0F0C7F416E82B97B4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -334,7 +334,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-bodyguard-tech-assessment-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-mvvm-weather-app-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -359,21 +359,21 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
-		C2169D4CB6D75205865BA6D9 /* [CP] Embed Pods Frameworks */ = {
+		B8EDA20C9A4A3A42153D7E8D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-bodyguard-tech-assessment/Pods-bodyguard-tech-assessment-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-mvvm-weather-app/Pods-mvvm-weather-app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-bodyguard-tech-assessment/Pods-bodyguard-tech-assessment-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-mvvm-weather-app/Pods-mvvm-weather-app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bodyguard-tech-assessment/Pods-bodyguard-tech-assessment-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mvvm-weather-app/Pods-mvvm-weather-app-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -538,18 +538,18 @@
 		};
 		3F40181F25F6AB62003C0FC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C94A213AE319F2EA7698F1F3 /* Pods-bodyguard-tech-assessment.debug.xcconfig */;
+			baseConfigurationReference = 046F8DC303DFB018B13C96CC /* Pods-mvvm-weather-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BBHWK82463;
-				INFOPLIST_FILE = "bodyguard-tech-assessment/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "mvvm-weather-app/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jeremypapay.bodyguard-tech-assessment";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jeremypapay.mvvm-weather-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -558,18 +558,18 @@
 		};
 		3F40182025F6AB62003C0FC8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C11D1347D17680282C5C3BC /* Pods-bodyguard-tech-assessment.release.xcconfig */;
+			baseConfigurationReference = E89056186EB5DD2C47489D64 /* Pods-mvvm-weather-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BBHWK82463;
-				INFOPLIST_FILE = "bodyguard-tech-assessment/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "mvvm-weather-app/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jeremypapay.bodyguard-tech-assessment";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jeremypapay.mvvm-weather-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -579,7 +579,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3F40180525F6AB5F003C0FC8 /* Build configuration list for PBXProject "bodyguard-tech-assessment" */ = {
+		3F40180525F6AB5F003C0FC8 /* Build configuration list for PBXProject "mvvm-weather-app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F40181C25F6AB62003C0FC8 /* Debug */,
@@ -588,7 +588,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F40181E25F6AB62003C0FC8 /* Build configuration list for PBXNativeTarget "bodyguard-tech-assessment" */ = {
+		3F40181E25F6AB62003C0FC8 /* Build configuration list for PBXNativeTarget "mvvm-weather-app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F40181F25F6AB62003C0FC8 /* Debug */,
